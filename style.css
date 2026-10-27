@@ -1,0 +1,327 @@
+/* Laundry Services - Hero Image Animation (Keyframes) */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* ================= DESKTOP (default) ================= */
+
+/* ---------- Navbar ---------- */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    padding: 0 5vw;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.nav-logo {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 15px;
+    color: #4b5563;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #1da1f2;
+}
+
+.user-name {
+    display: inline-block;
+    padding: 10px 22px;
+    font-size: 14px;
+    color: #1da1f2;
+    background-color: #e3f4ff;
+    border-radius: 8px;
+}
+
+/* ---------- Right side of navbar: username + hamburger ---------- */
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Hamburger icon: hidden by default (desktop & tablet) */
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-btn .bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #1f2937;
+    border-radius: 2px;
+}
+
+/* Menu list: hidden by default, positioned on the right side of the screen */
+.menu-list {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 55%;
+    height: 100vh;
+    padding-top: 40vh;
+    background-color: #000000;
+    text-align: center;
+}
+
+.menu-list a {
+    display: block;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu-list a:hover {
+    color: #1da1f2;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+}
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    padding: 0 3vw 0 8vw;
+}
+
+.hero-left h1 {
+    margin-bottom: 18px;
+    font-size: 48px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #374151;
+}
+
+.highlight {
+    color: #1da1f2;
+}
+
+.hero-left p {
+    margin-bottom: 30px;
+    width: 90%;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #9ca3af;
+}
+
+.book-btn {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #1da1f2;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* CTA hover: size increases and the button looks tilted */
+.book-btn:hover {
+    transform: scale(1.1) rotate(-5deg);
+    background-color: #0e86d4;
+    box-shadow: 0 8px 18px rgba(29, 161, 242, 0.4);
+}
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.hero-right img {
+    display: block;
+    height: 66vh;
+    max-width: 90%;
+    object-fit: contain;
+    animation: orbit 6s linear infinite;
+}
+
+/* Orbit animation: the image travels around a circle (radius 25px) without spinning itself,
+   and gets squeezed at certain points of the path. */
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(25px) rotate(0deg) scale(1, 1);
+    }
+    25% {
+        transform: rotate(90deg) translateX(25px) rotate(-90deg) scale(0.9, 1.08);
+    }
+    50% {
+        transform: rotate(180deg) translateX(25px) rotate(-180deg) scale(1.06, 0.92);
+    }
+    75% {
+        transform: rotate(270deg) translateX(25px) rotate(-270deg) scale(0.9, 1.08);
+    }
+    100% {
+        transform: rotate(360deg) translateX(25px) rotate(-360deg) scale(1, 1);
+    }
+}
+
+/* ================= TABLET (max-width: 992px) ================= */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0 4vw;
+    }
+
+    .nav-logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .user-name {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .hero-left {
+        padding: 0 2vw 0 5vw;
+    }
+
+    .hero-left h1 {
+        font-size: 30px;
+        margin-bottom: 14px;
+    }
+
+    .hero-left p {
+        width: 100%;
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
+
+    .book-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .hero-right img {
+        height: 45vh;
+        max-width: 95%;
+    }
+}
+
+/* ================= MOBILE (max-width: 600px) ================= */
+@media (max-width: 600px) {
+    /* Navbar: hide links, keep logo and username */
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        padding: 0 5vw;
+    }
+
+    .nav-logo {
+        font-size: 18px;
+    }
+
+    .user-name {
+        padding: 7px 12px;
+        font-size: 11px;
+    }
+
+    /* Hamburger icon: visible only in mobile view */
+    .menu-btn {
+        display: flex;
+    }
+
+    /* Show the menu list while the button is focused (or while a link inside is focused,
+       so tapping a link works). Menu list is a sibling of the button. */
+    .menu-btn:focus + .menu-list,
+    .menu-list:focus-within {
+        display: block;
+    }
+
+    /* Hero: stack text on top, image below */
+    .hero {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+        padding: 6vh 0 6vh 0;
+    }
+
+    .hero-left {
+        width: 100%;
+        padding: 0 6vw;
+        align-items: flex-start;
+    }
+
+    .hero-left h1 {
+        font-size: 26px;
+    }
+
+    .hero-left p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .book-btn {
+        padding: 11px 22px;
+        font-size: 13px;
+    }
+
+    .hero-right {
+        width: 100%;
+        margin-top: 5vh;
+    }
+
+    .hero-right img {
+        height: auto;
+        width: 65%;
+    }
+}
